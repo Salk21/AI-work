@@ -1,0 +1,23 @@
+# задание 4.3.2
+
+import numpy as np
+import math
+import matplotlib.pyplot as plt
+from scipy.integrate import simps
+
+list1=[] # массив в котором 10 значений
+for i in range(1, 11): # значения от 0 до 10
+  x = i
+  y = (math.sqrt(1+math.e**(math.sqrt(x))+math.cos(x**2)))/(abs(1-(math.sin(x))**3))+ math.log(abs(2*x))
+  list1.append(y) # результат выполнения функций (значение), который добавляется в конец массив
+
+print('Основной массив: ', list1, sep = "\n")
+plt.grid()
+plt.plot(list1)
+plt.show()
+
+n = list1 [0:5]
+print('Срез первой половины: ',n, sep = "\n")
+v = range(1,6)
+plt.grid()
+plt.scatter(v,n)
